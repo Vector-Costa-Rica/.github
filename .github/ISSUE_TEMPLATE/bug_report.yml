@@ -1,7 +1,11 @@
 name: Bug Report
-description: File a bug report to help us improve.
+description: File a bug report for your project.
 title: "[Bug]: "
 labels: ["bug", "triage"]
+assignees:
+  - vectorcr
+projects:
+  - Vector-Costa-Rica/9
 body:
   - type: markdown
     attributes:
@@ -60,7 +64,7 @@ body:
       description: Provide any other details, logs, or screenshots.
       placeholder: "Paste logs, error messages, or other context here."
     validations:
-      required: false
+      required: true
 
   - type: checkboxes
     id: confirm
