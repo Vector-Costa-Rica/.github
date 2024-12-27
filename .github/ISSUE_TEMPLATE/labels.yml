@@ -1,0 +1,40 @@
+labels:
+  - name: "🐛 bug"
+    color: "d73a4a"
+    description: "🐛 Something isn't working"
+
+  - name: "📋 triage"
+    color: "0052cc"
+    description: "📋 Needs to be reviewed and prioritized"
+
+  - name: "✨ enhancement"
+    color: "a2eeef"
+    description: "✨ New feature or request"
+
+  - name: "📚 documentation"
+    color: "0075ca"
+    description: "📚 Improvements or additions to documentation"
+
+  - name: "🆕 good first issue"
+    color: "7057ff"
+    description: "🆕 Good for newcomers"
+
+  - name: "🛠️ help wanted"
+    color: "008672"
+    description: "🛠️ Extra attention is needed"
+
+  - name: "🔥 critical"
+    color: "ff0000"
+    description: "🔥 Blocks functionality"
+
+  - name: "⚡ major"
+    color: "ffd700"
+    description: "⚡ Significant but not blocking functionality"
+
+  - name: "🔧 minor"
+    color: "00ff00"
+    description: "🔧 Minor issue with low impact"
+
+  - name: "🎨 cosmetic"
+    color: "cc00ff"
+    description: "🎨 Visual or UI-related"
