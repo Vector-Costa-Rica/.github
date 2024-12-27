@@ -1,0 +1,27 @@
+name: Sync Labels
+
+on:
+  push: # Automatically triggers the workflow on push
+    paths:
+      - ".github/labels.yml" # Only trigger when this file changes
+  workflow_dispatch: # Allows you to manually trigger the workflow
+
+permissions:
+  contents: write # Required to modify repository contents
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install Labels CLI
+        run: npm install -g github-label-sync
+
+      - name: Sync Labels
+        run: |
+          github-label-sync --access-token ${{ secrets.GITHUB_TOKEN }} \
+            --labels .github/labels.yml \
+            Vector-Costa-Rica/.github
