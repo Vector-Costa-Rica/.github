@@ -1,42 +1,25 @@
+# This workflow will triage pull requests and apply a label based on the
+# paths that are modified in the pull request.
+#
+# To use this workflow, you will need to set up a .github/labeler.yml
+# file with configuration.  For more information, see:
+# https://github.com/actions/labeler
+
 name: Labeler
 
 on:
-  pull_request_target: # Automatically label pull requests based on file paths
-  workflow_dispatch: # Allow manual runs
-
-permissions:
-  contents: read
-  pull-requests: write
+  pull_request_target: # Automatically triggers on pull requests
+  workflow_dispatch: # Allows manual triggering of the workflow
 
 jobs:
-  apply-labels:
+  label:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
 
     steps:
-      # Step 1: Checkout the repository
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      # Step 2: Run Labeler
-      - name: Apply Path-Based Labels
-        uses: actions/labeler@v4
+      - uses: actions/checkout@v3 # Ensures the repository is available
+      - uses: actions/labeler@v4 # Runs the Labeler action
         with:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
-
-  sync-default-labels:
-    runs-on: ubuntu-latest
-
-    steps:
-      # Step 1: Checkout the repository
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      # Step 2: Install Labeler (for managing label definitions)
-      - name: Install Labeler
-        run: npm install -g @srvaroa/labeler
-
-      # Step 3: Sync Default Labels
-      - name: Sync Labels
-        run: labeler --org vector-costa-rica --file .github/labels.yml
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
