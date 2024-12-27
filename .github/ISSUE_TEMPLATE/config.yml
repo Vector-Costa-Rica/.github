@@ -5,13 +5,13 @@ contact_links:
     about: Use this template to report bugs.
   - name: Feature Request
     url: https://github.com/vector-costa-rica/REPO_NAME/issues/new?template=feature_request.yml
-    about: Use this template to suggest a new feature.
+    about: Use this template to request new features.
   - name: Documentation Request
     url: https://github.com/vector-costa-rica/REPO_NAME/issues/new?template=documentation_request.yml
-    about: Use this template to request changes or additions to documentation.
-  - name: General Task
+    about: Use this template for documentation updates.
+  - name: Task
     url: https://github.com/vector-costa-rica/REPO_NAME/issues/new?template=task.yml
-    about: Use this template for tasks or enhancements.
+    about: Use this template for general tasks or enhancements.
   - name: Support Request
     url: https://github.com/vector-costa-rica/REPO_NAME/issues/new?template=support_request.yml
     about: Use this template to request help or troubleshooting.
