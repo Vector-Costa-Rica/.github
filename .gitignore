@@ -1,191 +1,64 @@
-# VCR global .gitignore — JS, Astro, PHP, Laravel, macOS, Linux, Windows
-# Use project-specific additions as needed; do not remove entries that protect secrets or build artifacts.
+# ═══════════════════════════════════════════════════════════════
+# VCR Standard .gitignore — Vector Costa Rica
+# ═══════════════════════════════════════════════════════════════
 
-# -----------------------------------------------------------------------------
-# macOS
-# -----------------------------------------------------------------------------
-.DS_Store
-.AppleDouble
-.LSOverride
-._*
-.Spotlight-V100
-.Trashes
-*~
-
-# -----------------------------------------------------------------------------
-# Linux
-# -----------------------------------------------------------------------------
-.directory
-.Trash-*
-.nfs*
-
-# -----------------------------------------------------------------------------
-# Windows
-# -----------------------------------------------------------------------------
-Thumbs.db
-ehthumbs.db
-Desktop.ini
-$RECYCLE.BIN/
-*.lnk
-
-# -----------------------------------------------------------------------------
-# Environment and secrets (all stacks)
-# -----------------------------------------------------------------------------
-.env
-.env.*
-!.env.example
-*.pem
-*.key
-*.crt
-secrets/
-*.secret
-
-# -----------------------------------------------------------------------------
-# Node / JavaScript / Bun / npm / yarn / pnpm
-# -----------------------------------------------------------------------------
+# Dependencies
 node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-.npm
-.yarn/
-.pnp.*
-dist/
-build/
-.next/
-.nuxt/
-.output/
-.cache/
-*.tsbuildinfo
-.parcel-cache/
-.turbo/
-.vercel/
-.serverless/
-.eslintcache
-.stylelintcache
-coverage/
-.nyc_output/
-
-# -----------------------------------------------------------------------------
-# Astro
-# -----------------------------------------------------------------------------
-.astro/
-dist/
-
-# -----------------------------------------------------------------------------
-# PHP / Laravel / Composer
-# -----------------------------------------------------------------------------
 vendor/
-.phpunit.result.cache
-.phpunit.cache
-phpunit.xml.bak
-storage/logs/*
-storage/framework/cache/*
-storage/framework/sessions/*
-storage/framework/views/*
-bootstrap/cache/*
-!storage/logs/.gitkeep
-!storage/framework/cache/.gitkeep
-!storage/framework/sessions/.gitkeep
-!storage/framework/views/.gitkeep
-!bootstrap/cache/.gitkeep
-.env.backup
-.phpunit.result.cache
-Homestead.json
-Homestead.yaml
-auth.json
-*.php.swp
+.bun/
 
-# -----------------------------------------------------------------------------
-# Python
-# -----------------------------------------------------------------------------
-__pycache__/
-*.py[cod]
-*$py.class
-.Python
-venv/
-.venv/
-env/
-.env/
-*.egg-info/
-.eggs/
+# Build output
 dist/
 build/
-*.egg
-.pytest_cache/
-.coverage
-htmlcov/
-.mypy_cache/
+.output/
 
-# -----------------------------------------------------------------------------
-# Go
-# -----------------------------------------------------------------------------
-*.exe
-*.exe~
-*.dll
-*.so
-*.dylib
-*.test
-/vendor/
+# Astro
+.astro/
 
-# -----------------------------------------------------------------------------
-# Editors & IDEs
-# -----------------------------------------------------------------------------
-# VS Code
+# Vite cache
+node_modules/.vite/
+
+# ── Environment files ──
+# Local dev env (NEVER commit)
+.env
+.env.local
+.env.*.local
+
+# dotenvx private keys (NEVER commit)
+.env.keys
+
+# Allow encrypted/committed env files
+!.env.production
+!.env.development
+!.env.example
+
+# ── IDE & OS ──
 .vscode/
-
-# Cursor (keep agent rules)
-.cursor/
-!.cursor/rules/
-
-# JetBrains (WebStorm, PhpStorm, IntelliJ)
 .idea/
-*.iml
-
-# Zed
-.zed/
-
-# Neovim / Vim
 *.swp
 *.swo
-*.swn
-.nvim/
-.vim/
+*~
+.DS_Store
+Thumbs.db
 
-# Sublime Text
-*.sublime-project
-*.sublime-workspace
-
-# Emacs
-\#*\#
-.dir-locals.el
-
-# Windsurf
-.windsurf/
-
-# -----------------------------------------------------------------------------
-# Build / test / tooling
-# -----------------------------------------------------------------------------
+# ── Logs ──
 *.log
-.cache/
-tmp/
-temp/
-*.tmp
-*.temp
-*.bak
-*.backup
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
 
-# -----------------------------------------------------------------------------
-# Docker (local overrides, not images)
-# -----------------------------------------------------------------------------
+# ── Testing ──
+coverage/
+test-results/
+test-results.json
+playwright-report/
+blob-report/
+
+# ── Docker ──
 docker-compose.override.yml
-.docker/
 
-# -----------------------------------------------------------------------------
-# Misc
-# -----------------------------------------------------------------------------
-*.orig
-*.rej
-.sass-cache/
-
+# ── Misc ──
+*.pid
+*.seed
+.npmrc
+.superpowers/
